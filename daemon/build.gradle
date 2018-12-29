@@ -1,0 +1,8 @@
+apply from: allGradle.lib_base
+
+def _S_VER = hasProperty("S_VER") ? ext.S_VER : '27.1.1'
+
+dependencies {
+    api fileTree(dir: 'libs', include: ['*.jar'])
+    compileOnly 'com.android.support:appcompat-v7:' + _S_VER
+}
